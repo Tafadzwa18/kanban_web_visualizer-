@@ -2,51 +2,23 @@
     <div class="d-flex justify-content-between align-items-start">
         <h6 class="mb-1 fw-bold">{{ task.title }}</h6>
         <div class="btn-group">
-            <button class="btn btn-sm text-primary p-0 me-2" data-bs-toggle="modal" data-bs-target="#editModal{{ task.id }}">Edit</button>
+            <button class="btn btn-sm text-primary p-0 me-2" data-bs-toggle="modal" data-bs-target="#editModal{{ task.id }}">
+                Edit
+            </button>
             <form method="POST" style="display:inline;">
                 {% csrf_token %}
                 <input type="hidden" name="action" value="delete">
                 <input type="hidden" name="task_id" value="{{ task.id }}">
-                <button type="submit" class="btn btn-sm text-danger p-0" onclick="return confirm('Delete this task?')">Del</button>
+                <button type="submit" class="btn btn-sm text-danger p-0" onclick="return confirm('Delete this task?')">
+                    Del
+                </button>
             </form>
         </div>
     </div>
     <p class="mb-1 small text-muted">{{ task.description|truncatewords:10 }}</p>
-</div>
-
-<div class="modal fade" id="editModal{{ task.id }}" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content text-dark">
-            <form method="POST">
-                {% csrf_token %}
-                <input type="hidden" name="action" value="edit">
-                <input type="hidden" name="task_id" value="{{ task.id }}">
-                <div class="modal-header">
-                    <h5 class="modal-title">Edit Task</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body text-start">
-                    <div class="mb-3">
-                        <label class="form-label">Title</label>
-                        <input type="text" name="title" class="form-control" value="{{ task.title }}" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Description</label>
-                        <textarea name="description" class="form-control" rows="3">{{ task.description }}</textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Status</label>
-                        <select name="status" class="form-select">
-                            <option value="todo" {% if task.status == 'todo' %}selected{% endif %}>To Do</option>
-                            <option value="in_progress" {% if task.status == 'in_progress' %}selected{% endif %}>In Progress</option>
-                            <option value="done" {% if task.status == 'done' %}selected{% endif %}>Done</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Update Task</button>
-                </div>
-            </form>
-        </div>
+    <div class="mt-2">
+        <span class="badge bg-light text-dark border small">
+            <i class="bi bi-person"></i> {{ task.assigned_to.name|default:"Unassigned" }}
+        </span>
     </div>
 </div>
