@@ -11,29 +11,19 @@ This application provides a simple and structured way to track tasks across diff
 * Kanban-style task management (To Do, In Progress, Done)
 * Employee management (admin-controlled)
 * Secure admin-only employee registration
-* 🎨 Responsive UI built with Bootstrap
+* Responsive UI built with Bootstrap
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Backend:** Django (Python)
 * **Frontend:** HTML, CSS, Bootstrap
 * **Database:** SQLite (default, can be changed)
 
 
-## 🔄 Future Improvements
+## Future Improvements
 
 * Drag-and-drop task movement
 * Real-time updates (WebSockets)
 * Notifications (email or in-app)
 * Task priorities and deadlines
 * Role-based permissions
-
-## 🤝 Contributing
-
-Contributions are welcome. Feel free to fork the project and submit a pull request.
-
-
-
----
-
-If you want, I can also tailor this README specifically for your **portfolio** or make it sound more impressive for recruiters.
