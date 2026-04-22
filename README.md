@@ -1,29 +1,43 @@
-# Employee Kanban Management System
 
-A web-based Kanban board application built with Django and Bootstrap to help organizations manage employee tasks efficiently through a visual workflow system.
+# Kanban Task Management System
 
-##  Overview
+A web-based task management system built with Django that allows organizations to manage employee tasks using a Kanban-style workflow.
 
-This application provides a simple and structured way to track tasks across different stages of completion. It is designed for internal organizational use, where administrators manage employees and assign tasks, while employees can view their personalized task boards.
+## Overview
+
+This application provides a structured way to manage tasks across different stages of completion. It enables administrators to assign and monitor tasks, while employees can track their progress through an intuitive visual board.
+
+The system is designed to simulate real-world task management workflows used in teams and organizations.
 
 ## Features
 
-* Kanban-style task management (To Do, In Progress, Done)
-* Employee management (admin-controlled)
-* Secure admin-only employee registration
-* Responsive UI built with Bootstrap
+- Kanban board (To Do, In Progress, Done)
+- Task assignment to employees
+- Employee management (admin-controlled)
+- Secure admin-only employee registration
+- Task tracking by status
+- Responsive user interface using Bootstrap
 
 ## Tech Stack
 
-* **Backend:** Django (Python)
-* **Frontend:** HTML, CSS, Bootstrap
-* **Database:** SQLite (default, can be changed)
+- Backend: Django (Python)
+- Frontend: HTML, CSS, Bootstrap
+- Database: SQLite
 
+
+## How to Run
+
+1. Clone the repository  
+2. Navigate to the project folder  
+3. Run migrations:
+   python manage.py migrate  
+4. Start server:
+   python manage.py runserver  
 
 ## Future Improvements
 
-* Drag-and-drop task movement
-* Real-time updates (WebSockets)
-* Notifications (email or in-app)
-* Task priorities and deadlines
-* Role-based permissions
+- Drag-and-drop task movement
+- Task priorities and deadlines
+- Real-time updates (WebSockets)
+- Notifications (email or in-app)
+- Role-based permissions
